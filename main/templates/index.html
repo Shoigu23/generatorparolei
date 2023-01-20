@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generator</title>
+</head>
+<body>
+    <form action="#" method="POST">
+        {% csrf_token %}
+
+        <div class="mb-3">
+            <h1 style="display: flex; justify-content: center;"><label for="exampleFormControlInput1" class="form-label">Генератор паролей</label></h1>
+            
+            <h1 style="display: flex; justify-content: center;"><input name = 'title' type="integer" class="form-control" id="exampleFormControlInput1" placeholder="Сколько символов хотите?" style="font-size: 50px;"></h1>
+
+        </div>
+        <h1 style="display: flex; justify-content: center; " ><button type="submit" class="btn btn-outline-success" style="font-size: 50px;">Success</button></h1>
+        <p style="display: flex; justify-content: center">
+        <input type="checkbox" name="Большие буквы" id="1">Большие буквы
+        <input type="checkbox" name="Маленькие буквы" id="2">Маленькие буквы
+        <input type="checkbox" name="Спец символы" id="3">Спец сиволы
+        </p>
+        <p style="font-size: 25px;">Resultat: {{ t }}</p>
+        {% for i in messages %}
+            <h1>{{ i }}</h1>
+        {% endfor %}
+        
+        
+    </form>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+
+
+</body>
+</html>
